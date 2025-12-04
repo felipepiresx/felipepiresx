@@ -23,21 +23,9 @@ Whether you need someone to lead a new initiative or bring clarity and structure
 
 ---
 
-## GitHub Stats
-
-<div align="center">
-
-![Felipe's GitHub stats](https://github-readme-stats.vercel.app/api?username=felipepiresx&show_icons=true&theme=tokyonight&hide_border=true&count_private=true)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=felipepiresx&layout=compact&theme=tokyonight&hide_border=true)
-
-</div>
-
----
-
 ## How to reach me
 
-📧 Email: Contact via GitHub
+📧 Email: info@geonetinternet.com
 📱 WhatsApp: [+55 21 98573-7285](https://wa.me/5521985737285)
 👀 ![Profile Views](https://komarev.com/ghpvc/?username=felipepiresx&color=blueviolet&style=flat-square)
 
