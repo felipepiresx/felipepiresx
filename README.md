@@ -26,7 +26,6 @@ Whether you need someone to lead a new initiative or bring clarity and structure
 ## How to reach me
 
 📧 Email: info@geonetinternet.com
-📱 WhatsApp: [+55 21 98573-7285](https://wa.me/5521985737285)
 
 ![Profile Views](https://komarev.com/ghpvc/?username=felipepiresx&color=blueviolet&style=flat-square)
 
