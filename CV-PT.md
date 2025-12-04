@@ -5,7 +5,7 @@ Brasil
 ## Contato
 - Email: info@geonetinternet.com
 - LinkedIn: [linkedin.com/in/felipepiresx](https://www.linkedin.com/in/felipepiresx)
-- Empresa: [geonetinternet.com](https://geonetinternet.com)
+- Portfólio: [geonetinternet.com](https://geonetinternet.com)
 
 ## Resumo
 
