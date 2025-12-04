@@ -1,36 +1,25 @@
 ```bash
-felipepiresx@github:~$ cat profile.txt
+felipepiresx@github:~$ cat -n profile.txt
 
-Technical Project Manager | Product Manager | Marketing & AI Software
-15+ years experience building web, mobile, SaaS, and geospatial platforms
-
-Skills: Product Management, Team Leadership, AI Automation, R&D to Production
-Location: São Paulo, Brazil
+1- Project Management: Product roadmap, MVP definition, sprint management, QA, releases
+2- Team Leadership: Remote team management, hiring, delivery management, embedded consulting
+3- Backend: Node.js, NestJS, Python, REST APIs, GraphQL
+4- Frontend: React, Next.js, TypeScript, JavaScript
+5- AI & Automation: CustomGPT, LangChain, OpenAI, YOLOv8, AI video processing
+6- DevOps & Infrastructure: Docker, AWS, DigitalOcean, Linode, CI/CD, proxy networks
+7- Databases: PostgreSQL, MongoDB, Redis
+8- Tools: Git, Puppeteer, Selenium, FFmpeg, Apify, web scraping at scale
 ```
 
----
+## Hi 👋, I'm Felipe
 
-## About
+**Technical Project Manager | Product Manager | Marketing & AI Software**
 
 I'm a senior project manager and applied computer science researcher. With over 15 years of experience, I specialize in building web, mobile, SaaS, and geospatial platforms — from R&D to production.
 
 I'm highly skilled at leading remote teams through Upwork or collaborating directly with your in-house developers, designers, or leadership. I can join your project as a hiring and delivery manager or embedded consultant, helping you set up your team and product from scratch, define your MVP or product roadmap, manage sprints, QA, and releases alongside internal teams, and deliver results while keeping your burn rate under control.
 
 Whether you need someone to lead a new initiative or bring clarity and structure to an ongoing project, I can help your team move forward with focus and precision.
-
----
-
-## Tech Stack
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 
 ---
 
@@ -46,14 +35,8 @@ Whether you need someone to lead a new initiative or bring clarity and structure
 
 ---
 
-## Contact
+## How to reach me
 
-WhatsApp: [+55 21 98573-7285](https://wa.me/5521985737285)
-
----
-
-<div align="center">
-
-![Profile Views](https://komarev.com/ghpvc/?username=felipepiresx&color=blueviolet&style=for-the-badge)
-
-</div>
+📧 Email: Contact via GitHub
+📱 WhatsApp: [+55 21 98573-7285](https://wa.me/5521985737285)
+👀 ![Profile Views](https://komarev.com/ghpvc/?username=felipepiresx&color=blueviolet&style=flat-square)
