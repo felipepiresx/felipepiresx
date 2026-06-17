@@ -1,3 +1,11 @@
+<p align="center">
+  <img src="./painting.jpg" alt="Untitled — Felipe Pires" width="900">
+</p>
+
+<p align="center"><em>Untitled — ink &amp; gouache</em></p>
+
+---
+
 ```bash
 felipepiresx@github:~$ cat -n profile.txt
 
