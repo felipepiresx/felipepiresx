@@ -38,3 +38,5 @@ Whether you need someone to lead a new AI initiative or bring clarity and struct
 ## How to reach me
 
 📧 Email: info@geonetinternet.com
+
+<!-- profile -->
