@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=felipepiresx&amp;bg_color=0d1117&amp;color=00f0ff&amp;line=ff2bd6&amp;point=ffffff&amp;area=true&amp;area_color=6e1bff&amp;hide_border=true&amp;custom_title=Contribution%20Activity&amp;radius=10&amp;height=250" alt="Contribution activity — 3,057 in the last year" width="100%">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=felipepiresx&amp;bg_color=0d1117&amp;color=00f0ff&amp;line=ff2bd6&amp;point=ffffff&amp;area=true&amp;area_color=6e1bff&amp;hide_border=true&amp;custom_title=Contribution%20Activity%20(last%2030%20days)&amp;radius=10&amp;height=250&amp;days=30" alt="Contribution activity — last 30 days" width="100%">
 </p>
 
 <h3 align="center">Notable Repos</h3>
