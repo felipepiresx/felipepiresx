@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./painting.jpg" alt="2007 — Felipe Pires" width="900">
+  <img src="./painting.jpg" alt="2007 — Felipe Pires" width="420">
 </p>
 
 <p align="center"><em>2007 — pen</em></p>
@@ -21,22 +21,14 @@ felipepiresx@github:~$ cat -n profile.txt
 10- Tools: Git, Puppeteer, Selenium, FFmpeg, Apify, web scraping at scale
 ```
 
-## Hi 👋, I'm Felipe
+## Hi, I'm Felipe
 
-Applied computer science researcher & product manager • Geographic information systems (orbis-geonet) • Solana blockchain • Marketing • Artificial intelligence
+Applied computer science researcher & product manager • Geographic information systems (orbis-geonet) • Solana • Marketing • AI
 
 15+ years shipping web, mobile, SaaS, and geospatial platforms — from R&D to production.
 
-These days I work as a hands-on technical PM: I use Claude Code, the Claude Agent SDK, and MCP servers extensively to prototype, validate, and ship product directly — compressing what used to take engineering teams weeks into days. I own discovery, roadmap, MVP definition, prioritization, and stakeholder alignment, while staying close enough to the code to write specs that engineers can actually build from.
+I work as a hands-on technical PM: I use Claude Code, the Agent SDK, and MCP servers to prototype, validate, and ship product directly — compressing weeks of work into days. I own discovery, roadmap, MVP definition, prioritization, and stakeholder alignment, while staying close enough to the code to write specs engineers can build from.
 
-I also run delivery as a project manager when needed — leading remote teams via Upwork or working alongside in-house developers, designers, and leadership. I can join as a hiring and delivery manager or embedded consultant, set up product and team from scratch, manage sprints, QA, and releases, and keep burn rate under control.
-
-Whether you need someone to lead a new AI initiative or bring clarity and structure to an ongoing product, I can help your team move forward with focus and precision.
-
----
-
-## How to reach me
-
-📧 Email: info@geonetinternet.com
+When needed I also run delivery — leading remote teams or working alongside in-house developers and leadership, standing up product and process from scratch, and managing sprints, QA, and releases while keeping burn under control.
 
 <!-- profile -->
