@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/felipepiresx/felipepiresx"><img src="https://github-readme-stats.vercel.app/api/pin/?username=felipepiresx&amp;repo=felipepiresx&amp;bg_color=0d1117&amp;title_color=00f0ff&amp;text_color=9aa4b2&amp;icon_color=ff2bd6&amp;border_color=00f0ff" height="115"></a>&nbsp;<a href="https://github.com/orbis-geonet"><img src="./orbis-geonet-card.svg" height="115" alt="orbis-geonet"></a>
+  <a href="https://github.com/felipepiresx"><img src="./felipepiresx-card.svg" height="115" alt="felipepiresx"></a>&nbsp;<a href="https://github.com/orbis-geonet"><img src="./orbis-geonet-card.svg" height="115" alt="orbis-geonet"></a>
 </p>
 <p align="center">
   <a href="https://github.com/orbis-geonet/research"><img src="https://github-readme-stats.vercel.app/api/pin/?username=orbis-geonet&amp;repo=research&amp;bg_color=0d1117&amp;title_color=00f0ff&amp;text_color=9aa4b2&amp;icon_color=ff2bd6&amp;border_color=00f0ff" height="115"></a>&nbsp;<a href="https://github.com/orbis-geonet/android-app"><img src="https://github-readme-stats.vercel.app/api/pin/?username=orbis-geonet&amp;repo=android-app&amp;bg_color=0d1117&amp;title_color=00f0ff&amp;text_color=9aa4b2&amp;icon_color=ff2bd6&amp;border_color=00f0ff" height="115"></a>
