@@ -3,8 +3,10 @@
 </p>
 
 <p align="center">
-<a href="https://github.com/felipepiresx"><img src="./felipepiresx-card.svg" height="110" alt="felipepiresx"></a><a href="https://github.com/orbis-geonet"><img src="./orbis-geonet-card.svg" height="110" alt="orbis-geonet"></a><br>
-<a href="https://github.com/adorosario/customgpt-agent"><img src="./customgpt-agent-card.svg" height="110" alt="customgpt-agent"></a><a href="https://github.com/kirollosatef/customgpt-claude-quadruple-verification"><img src="./quadruple-verification-card.svg" height="110" alt="quadruple-verification"></a>
+  <a href="https://github.com/felipepiresx"><img src="./felipepiresx-card.svg" height="110" alt="felipepiresx"></a>&emsp;<a href="https://github.com/orbis-geonet"><img src="./orbis-geonet-card.svg" height="110" alt="orbis-geonet"></a>
+</p>
+<p align="center">
+  <a href="https://github.com/adorosario/customgpt-agent"><img src="./customgpt-agent-card.svg" height="110" alt="customgpt-agent"></a>&emsp;<a href="https://github.com/kirollosatef/customgpt-claude-quadruple-verification"><img src="./quadruple-verification-card.svg" height="110" alt="quadruple-verification"></a>
 </p>
 
 <p align="center">
