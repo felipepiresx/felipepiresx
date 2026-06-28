@@ -7,8 +7,12 @@
   <a href="https://github.com/orbis-geonet/.github"><img src="https://github-readme-stats.vercel.app/api/pin/?username=orbis-geonet&amp;repo=.github" height="120"></a>
 </p>
 <p align="center">
-  <a href="https://github.com/adorosario/customgpt-agent"><img src="https://github-readme-stats.vercel.app/api/pin/?username=adorosario&amp;repo=customgpt-agent" height="120"></a>
   <a href="https://github.com/orbis-geonet/research"><img src="https://github-readme-stats.vercel.app/api/pin/?username=orbis-geonet&amp;repo=research" height="120"></a>
+  <a href="https://github.com/orbis-geonet/android-app"><img src="https://github-readme-stats.vercel.app/api/pin/?username=orbis-geonet&amp;repo=android-app" height="120"></a>
+</p>
+<p align="center">
+  <a href="https://github.com/orbis-geonet/ios-app"><img src="https://github-readme-stats.vercel.app/api/pin/?username=orbis-geonet&amp;repo=ios-app" height="120"></a>
+  <a href="https://github.com/adorosario/customgpt-agent"><img src="https://github-readme-stats.vercel.app/api/pin/?username=adorosario&amp;repo=customgpt-agent" height="120"></a>
 </p>
 
 ---
