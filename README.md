@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img src="./painting-v2.jpg" alt="2007 — Felipe Pires" width="100%">
+  <img src="./painting-v3.jpg" alt="2007 — Felipe Pires" width="100%">
 </p>
 
 <p align="center"><em>2007 — pen</em></p>
