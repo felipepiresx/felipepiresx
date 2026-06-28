@@ -3,13 +3,13 @@
 </p>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/felipepiresx/"><img src="./felipepiresx-card.svg" height="110" alt="Work history"></a>&ensp;<a href="https://github.com/orbis-geonet"><img src="./orbis-geonet-card.svg" height="110" alt="orbis-geonet"></a>
+  <a href="https://www.linkedin.com/in/felipepiresx/"><img src="./felipepiresx-card.svg" height="110" alt="work-history"></a>&ensp;<a href="https://github.com/orbis-geonet"><img src="./orbis-geonet-card.svg" height="110" alt="orbis-geonet"></a>
   <br>
   <a href="https://github.com/adorosario/customgpt-agent"><img src="./customgpt-agent-card.svg" height="110" alt="customgpt-agent"></a>&ensp;<a href="https://github.com/kirollosatef/customgpt-claude-quadruple-verification"><img src="./quadruple-verification-card.svg" height="110" alt="quadruple-verification"></a>
 </p>
 
 <p align="center">
-  <img src="./painting.jpg" alt="2007 — Felipe Pires" width="100%">
+  <img src="./painting-v2.jpg" alt="2007 — Felipe Pires" width="100%">
 </p>
 
 <p align="center"><em>2007 — pen</em></p>
