@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/felipepiresx"><img src="./felipepiresx-card.svg" height="110" alt="felipepiresx"></a>&ensp;<a href="https://github.com/orbis-geonet"><img src="./orbis-geonet-card.svg" height="110" alt="orbis-geonet"></a>
+  <a href="https://www.linkedin.com/in/felipepiresx/"><img src="./felipepiresx-card.svg" height="110" alt="Work history"></a>&ensp;<a href="https://github.com/orbis-geonet"><img src="./orbis-geonet-card.svg" height="110" alt="orbis-geonet"></a>
   <br>
   <a href="https://github.com/adorosario/customgpt-agent"><img src="./customgpt-agent-card.svg" height="110" alt="customgpt-agent"></a>&ensp;<a href="https://github.com/kirollosatef/customgpt-claude-quadruple-verification"><img src="./quadruple-verification-card.svg" height="110" alt="quadruple-verification"></a>
 </p>
