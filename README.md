@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=felipepiresx&amp;bg_color=161b22&amp;color=9be9a8&amp;line=39d353&amp;point=ffffff&amp;area=true&amp;area_color=006d32&amp;hide_border=true&amp;custom_title=Contribution%20Activity&amp;radius=10" alt="Contribution activity" width="100%">
+  <img src="./activity-graph.svg" alt="Contribution activity" width="100%">
 </p>
 
 <p align="center">

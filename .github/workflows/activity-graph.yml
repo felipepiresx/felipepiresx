@@ -1,0 +1,28 @@
+name: activity graph
+
+on:
+  schedule:
+    - cron: "20 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: generate svg
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/generate_activity_graph.py
+      - name: commit if changed
+        run: |
+          git config user.name "felipepiresx"
+          git config user.email "orbis.mobileapp@gmail.com"
+          if ! git diff --quiet activity-graph.svg; then
+            git add activity-graph.svg
+            git commit -m "update activity graph"
+            git push
+          fi
