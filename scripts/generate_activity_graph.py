@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 """Generate activity-graph.svg: last 31 days of contributions as a line chart.
 
-Replaces github-readme-activity-graph.vercel.app (kept dying with
-"Can't fetch any contribution"). Data comes from the GitHub GraphQL API
-via the gh CLI, so it works locally and in Actions with GITHUB_TOKEN.
+Faithful replica of github-readme-activity-graph.vercel.app output (the public
+instance kept dying with "Can't fetch any contribution"), matching its
+chartist-based rendering: 1200x420 card, dashed grid, animated 4px line,
+white points, flat area fill. Data comes from the GitHub GraphQL API via the
+gh CLI, so it works locally and in Actions with GITHUB_TOKEN.
 """
 
 import json
+import math
 import subprocess
 import sys
 from pathlib import Path
@@ -14,15 +17,18 @@ from pathlib import Path
 USERNAME = "felipepiresx"
 DAYS = 31
 
-WIDTH, HEIGHT = 1200, 450
-MARGIN_L, MARGIN_R, MARGIN_T, MARGIN_B = 70, 40, 80, 75
+# geometry from the original service: 1200 x 420 canvas,
+# chartPadding {top:80, right:50, bottom:20, left:20},
+# axisY offset 70 (label gutter), axisX offset 50
+WIDTH, HEIGHT = 1200, 420
+PLOT_L, PLOT_R, PLOT_T, PLOT_B = 90, 1150, 80, 350
+RADIUS = 10
 
 BG = "#161b22"
-TEXT = "#9be9a8"
+COLOR = "#9be9a8"   # labels, grid, title
 LINE = "#39d353"
 POINT = "#ffffff"
 AREA = "#006d32"
-GRID = "#39d35322"
 TITLE = "Contribution Activity"
 
 QUERY = (
@@ -41,9 +47,22 @@ def fetch_days():
     return days[-DAYS:]
 
 
+def chartist_bounds(y_max, axis_len, min_space=20):
+    """Chartist-style tick step: integer steps of 1/2/5 x 10^n, at least
+    min_space px apart, axis max rounded up to a multiple of the step."""
+    max_ticks = max(1, axis_len // min_space)
+    step = 1
+    while True:
+        for s in (step, step * 2, step * 5):
+            if math.ceil(y_max / s) <= max_ticks:
+                top = max(s, math.ceil(y_max / s) * s)
+                return s, top
+        step *= 10
+
+
 def smooth_path(pts, y_top, y_bottom):
-    """Catmull-Rom spline rendered as cubic beziers, clamped to the plot area
-    so the curve never dips below the zero baseline."""
+    """Catmull-Rom spline as cubic beziers (chartist cardinal, tension 0),
+    clamped to the plot area so the curve never dips below the baseline."""
     if len(pts) < 3:
         return "M" + " L".join(f"{x:.1f},{y:.1f}" for x, y in pts)
 
@@ -62,82 +81,110 @@ def smooth_path(pts, y_top, y_bottom):
     return d
 
 
-def nice_ceiling(n):
-    if n <= 5:
-        return 5
-    for step in (10, 20, 25, 50, 100, 200, 500):
-        if n <= step:
-            return step
-    return ((n // 100) + 1) * 100
-
-
-MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-          "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-
-
 def main():
     days = fetch_days()
     counts = [d["contributionCount"] for d in days]
-    y_max = nice_ceiling(max(counts))
+    step, y_top_val = chartist_bounds(max(max(counts), 1), PLOT_B - PLOT_T)
 
-    plot_w = WIDTH - MARGIN_L - MARGIN_R
-    plot_h = HEIGHT - MARGIN_T - MARGIN_B
+    plot_w = PLOT_R - PLOT_L
+    plot_h = PLOT_B - PLOT_T
     step_x = plot_w / (DAYS - 1)
 
     pts = []
     for i, c in enumerate(counts):
-        x = MARGIN_L + i * step_x
-        y = MARGIN_T + plot_h * (1 - c / y_max)
+        x = PLOT_L + i * step_x
+        y = PLOT_B - plot_h * c / y_top_val
         pts.append((x, y))
 
-    line_d = smooth_path(pts, MARGIN_T, MARGIN_T + plot_h)
-    area_d = (line_d + f" L{pts[-1][0]:.1f},{MARGIN_T + plot_h:.1f}"
-              f" L{pts[0][0]:.1f},{MARGIN_T + plot_h:.1f} Z")
+    line_d = smooth_path(pts, PLOT_T, PLOT_B)
+    area_d = (line_d + f" L{pts[-1][0]:.1f},{PLOT_B}"
+              f" L{pts[0][0]:.1f},{PLOT_B} Z")
 
-    grid, ylabels = [], []
-    n_grid = 5
-    for g in range(n_grid + 1):
-        y = MARGIN_T + plot_h * g / n_grid
-        val = round(y_max * (1 - g / n_grid))
-        grid.append(f'<line x1="{MARGIN_L}" y1="{y:.1f}" x2="{WIDTH - MARGIN_R}" '
-                    f'y2="{y:.1f}" stroke="{GRID}" stroke-width="1"/>')
-        ylabels.append(f'<text x="{MARGIN_L - 12}" y="{y + 4:.1f}" fill="{TEXT}" '
-                       f'font-size="13" text-anchor="end">{val}</text>')
-
-    xlabels = []
+    grid, labels = [], []
+    for v in range(0, y_top_val + 1, step):
+        y = PLOT_B - plot_h * v / y_top_val
+        grid.append(f'<line x1="{PLOT_L}" y1="{y:.1f}" x2="{PLOT_R}" y2="{y:.1f}" class="ct-grid"/>')
+        labels.append(f'<text x="{PLOT_L - 10}" y="{y + 4.5:.1f}" class="ct-label" '
+                      f'text-anchor="end">{v}</text>')
     for i, d in enumerate(days):
-        yy, mm, dd = d["date"].split("-")
-        label = f"{int(dd)} {MONTHS[int(mm) - 1]}" if (i == 0 or dd == "01") else str(int(dd))
-        x = MARGIN_L + i * step_x
-        xlabels.append(f'<text x="{x:.1f}" y="{MARGIN_T + plot_h + 24:.1f}" fill="{TEXT}" '
-                       f'font-size="12" text-anchor="middle">{label}</text>')
+        x = PLOT_L + i * step_x
+        grid.append(f'<line x1="{x:.1f}" y1="{PLOT_T}" x2="{x:.1f}" y2="{PLOT_B}" class="ct-grid"/>')
+        labels.append(f'<text x="{x - 4.5:.1f}" y="{PLOT_B + 17}" class="ct-label" '
+                      f'text-anchor="start">{int(d["date"].split("-")[2])}</text>')
+
+    # axis titles, positioned as node-chartist renders them
+    labels.append(f'<text x="{PLOT_L + plot_w / 2}" y="{PLOT_B + 50}" class="ct-label" '
+                  f'text-anchor="middle" dominant-baseline="text-after-edge">Days</text>')
+    labels.append(f'<text x="20" y="{PLOT_T + plot_h / 2}" class="ct-label" text-anchor="middle" '
+                  f'dominant-baseline="hanging" transform="rotate(-90, 20, {PLOT_T + plot_h / 2})">'
+                  f'Contributions</text>')
 
     dots = "".join(
-        f'<circle cx="{x:.1f}" cy="{y:.1f}" r="3.2" fill="{POINT}"/>' for x, y in pts
+        f'<line x1="{x:.1f}" y1="{y:.1f}" x2="{x + 0.01:.2f}" y2="{y:.1f}" class="ct-point"/>'
+        for x, y in pts
     )
 
-    svg = f'''<svg width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}" xmlns="http://www.w3.org/2000/svg">
-  <style>text {{ font-family: 'Segoe UI', Ubuntu, sans-serif; font-weight: 600; }}</style>
-  <defs>
-    <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="{AREA}" stop-opacity="0.65"/>
-      <stop offset="100%" stop-color="{AREA}" stop-opacity="0.05"/>
-    </linearGradient>
-  </defs>
-  <rect width="{WIDTH}" height="{HEIGHT}" rx="10" fill="{BG}"/>
-  <text x="{WIDTH / 2}" y="45" fill="{TEXT}" font-size="22" text-anchor="middle">{TITLE}</text>
+    svg = f'''<svg width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" rx="{RADIUS}" height="100%" width="100%" fill="{BG}"/>
+  <style>
+    svg {{
+      font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
+      user-select: none;
+    }}
+    .title {{
+      font: 600 20px 'Segoe UI', Ubuntu, Sans-Serif;
+      fill: {COLOR};
+    }}
+    .ct-label {{
+      fill: {COLOR};
+      font-size: .75rem;
+      line-height: 1;
+    }}
+    .ct-grid {{
+      stroke: {COLOR};
+      stroke-width: 1px;
+      stroke-opacity: 0.3;
+      stroke-dasharray: 2px;
+    }}
+    .ct-point {{
+      stroke-width: 10px;
+      stroke-linecap: round;
+      stroke: {POINT};
+      animation: blink 1s ease-in-out forwards;
+    }}
+    .ct-line {{
+      fill: none;
+      stroke-width: 4px;
+      stroke-dasharray: 5000;
+      stroke-dashoffset: 5000;
+      stroke: {LINE};
+      animation: dash 5s ease-in-out forwards;
+    }}
+    .ct-area {{
+      stroke: none;
+      fill: {AREA};
+      fill-opacity: 0.1;
+    }}
+    @keyframes blink {{
+      from {{ opacity: 0; transform: translateX(-20px); }}
+      to {{ opacity: 1; transform: translateX(0); }}
+    }}
+    @keyframes dash {{
+      to {{ stroke-dashoffset: 0; }}
+    }}
+  </style>
+  <text x="{WIDTH / 2}" y="40" class="title" text-anchor="middle">{TITLE}</text>
   {"".join(grid)}
-  {"".join(ylabels)}
-  {"".join(xlabels)}
-  <path d="{area_d}" fill="url(#area)"/>
-  <path d="{line_d}" fill="none" stroke="{LINE}" stroke-width="2.5"
-        stroke-linecap="round" stroke-linejoin="round"/>
+  {"".join(labels)}
+  <path d="{area_d}" class="ct-area"/>
+  <path d="{line_d}" class="ct-line"/>
   {dots}
 </svg>
 '''
     out = Path(__file__).resolve().parent.parent / "activity-graph.svg"
     out.write_text(svg, encoding="utf-8")
-    print(f"wrote {out} (max {max(counts)}/day over last {DAYS} days)", file=sys.stderr)
+    print(f"wrote {out} (max {max(counts)}/day, y axis to {y_top_val} step {step})",
+          file=sys.stderr)
 
 
 if __name__ == "__main__":
